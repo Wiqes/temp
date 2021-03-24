@@ -1,8 +1,9 @@
-import { LoginPage } from '@components/loginPage/LoginPage';
-import { MainContent } from '@components/mainContent/MainContent';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 import { observer } from 'mobx-react';
+
+import { LoginPage } from '@components/loginPage/LoginPage';
+import { MainContent } from '@components/mainContent/MainContent';
 
 const App = observer(({ authState }) => {
   const { auth } = authState;

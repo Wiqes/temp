@@ -1,16 +1,19 @@
-import { action, configure, observable } from 'mobx';
-import { actionsNames } from '@constants/actions';
+import { makeAutoObservable } from 'mobx';
 
-configure({ enforceActions: true });
+class AuthState {
+  auth = false;
 
-const authState = observable({
-  auth: false,
-  makeAuthTruthy: action(actionsNames.makeAuthTruthy, () => {
-    authState.auth = true;
-  }),
-  makeAuthFalsy: action(actionsNames.makeAuthFalsy, () => {
-    authState.auth = false;
-  }),
-});
+  constructor() {
+    makeAutoObservable(this);
+  }
 
+  makeAuthTruthy() {
+    this.auth = true;
+  }
+  makeAuthFalsy() {
+    this.auth = false;
+  }
+}
+
+const authState = new AuthState();
 export { authState };
