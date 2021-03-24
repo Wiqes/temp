@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useStyles } from "@components/layout/Content/Headcount/style";
 
 const Headcount = () => {

@@ -1,16 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import "@fontsource/roboto";
 
-import '@fontsource/roboto';
-import App from '@components/App';
-import { authState } from '@store/authState';
+import App from "@components/App";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App authState={authState} />
+      <App />
     </Router>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );

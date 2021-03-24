@@ -4,14 +4,15 @@ import { observer } from "mobx-react";
 
 import { LoginPage } from "@components/LoginPage/LoginPage";
 import { Layout } from "@components/layout/Layout";
+import { authState } from "@store/authState";
 
-const App = observer(({ authState }) => {
+const App = observer(() => {
   const { auth } = authState;
   const history = useHistory();
 
   useEffect(() => {
     if (auth) {
-      history.push("/");
+      history.push("/pages");
     } else {
       history.push("/login");
     }
@@ -20,7 +21,7 @@ const App = observer(({ authState }) => {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={Layout} />
+        <Route path="/pages" component={Layout} />
         <Route path="/login" component={LoginPage} />
       </Switch>
     </div>
