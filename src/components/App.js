@@ -1,9 +1,9 @@
-import { Route, Switch, useHistory } from 'react-router-dom';
-import { useEffect } from 'react';
-import { observer } from 'mobx-react';
+import { Route, Switch, useHistory } from "react-router-dom";
+import { useEffect } from "react";
+import { observer } from "mobx-react";
 
-import { LoginPage } from '@components/loginPage/LoginPage';
-import { MainContent } from '@components/mainContent/MainContent';
+import { LoginPage } from "@components/LoginPage/LoginPage";
+import { Layout } from "@components/layout/Layout";
 
 const App = observer(({ authState }) => {
   const { auth } = authState;
@@ -11,16 +11,16 @@ const App = observer(({ authState }) => {
 
   useEffect(() => {
     if (auth) {
-      history.push('/');
+      history.push("/");
     } else {
-      history.push('/login');
+      history.push("/login");
     }
   }, [auth, history]);
 
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={MainContent} />
+        <Route exact path="/" component={Layout} />
         <Route path="/login" component={LoginPage} />
       </Switch>
     </div>

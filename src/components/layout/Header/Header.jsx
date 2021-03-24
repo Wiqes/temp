@@ -1,6 +1,7 @@
-import React from 'react';
-import { AppBar, Avatar, Box, Toolbar, Typography } from '@material-ui/core';
-import { useStyles } from '@components/mainContent/style';
+import React from "react";
+import { AppBar, Avatar, Box, Toolbar, Typography } from "@material-ui/core";
+
+import { useStyles } from "@components/layout/style";
 
 const Header = () => {
   const classes = useStyles();
@@ -16,7 +17,12 @@ const Header = () => {
           alt="Cindy Baker"
           src="http://healthysoulmag.com/wp-content/uploads/2019/04/hellomagazine.com_.jpg"
         />
-        <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="flex-start">
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+        >
           <div className={classes.userName}>bad.forecast</div>
           <div className={classes.role}>Admin</div>
         </Box>

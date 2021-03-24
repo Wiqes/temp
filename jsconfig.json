@@ -6,7 +6,8 @@
       "@assets/*": ["assets/*"],
       "@store/*": ["store/*"],
       "@constants/*": ["constants/*"],
-      "@ui/*": ["ui/*"]
+      "@ui/*": ["ui/*"],
+      "@content/*": ["components/layout/Content/*"]
     }
   }
 }
