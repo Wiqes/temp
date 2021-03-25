@@ -12,7 +12,7 @@ const App = observer(() => {
 
   useEffect(() => {
     if (auth) {
-      history.push("/pages");
+      history.push("/pages/headcount");
     } else {
       history.push("/login");
     }
