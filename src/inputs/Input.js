@@ -7,6 +7,7 @@ const Input = ({
   defaultValue,
   validation,
   placeholder,
+  elementType,
 }) => {
   const { register } = useFormContext();
 
@@ -14,6 +15,7 @@ const Input = ({
     <input
       name={name}
       disabled={disabled}
+      type={elementType}
       defaultValue={defaultValue}
       placeholder={placeholder}
       ref={validation ? register(validation) : register}

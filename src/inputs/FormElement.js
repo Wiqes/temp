@@ -5,6 +5,7 @@ import { Error } from "./Error";
 const FormElement = ({
   name,
   type,
+  elementType,
   disabled = false,
   defaultValue,
   validation = null,
@@ -26,6 +27,7 @@ const FormElement = ({
         rows={rows}
         cols={cols}
         disabled={disabled}
+        elementType={elementType}
         defaultValue={defaultValue}
         validation={validation}
         placeholder={placeholder}
