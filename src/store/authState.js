@@ -1,19 +1,26 @@
+import { rolePermissions } from '@constants/rolePermissions';
 import { makeAutoObservable } from 'mobx';
 
 class AuthState {
-  auth = false;
+  isAuthenticated = false;
+  role = 'Budget Owner';
 
   constructor() {
     makeAutoObservable(this);
   }
 
   makeAuthTruthy() {
-    this.auth = true;
+    this.isAuthenticated = true;
+    this.role = 'Admin';
   }
   makeAuthFalsy() {
-    this.auth = false;
+    this.isAuthenticated = false;
+    this.role = '';
+  }
+
+  hasPermission(permission) {
+    return !permission || rolePermissions[this.role].includes(permission);
   }
 }
 
-const authState = new AuthState();
-export { authState };
+export const authState = new AuthState();

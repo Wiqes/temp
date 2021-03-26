@@ -1,15 +1,18 @@
-import React from "react";
-import { Input } from "./Input";
-import { Error } from "./Error";
+import React from 'react';
 
-const FormElement = ({
+import { Input } from './Input';
+import { Error } from './Error';
+
+export const FormElement = ({
   name,
   type,
-  elementType,
   disabled = false,
   defaultValue,
   validation = null,
   rows,
+  width,
+  height,
+  inputType,
   cols,
   placeholder,
   options,
@@ -21,22 +24,22 @@ const FormElement = ({
   const Component = fieldMap[type];
 
   return (
-    <>
+    <div>
       <Component
         name={name}
         rows={rows}
         cols={cols}
+        inputType={inputType}
         disabled={disabled}
-        elementType={elementType}
         defaultValue={defaultValue}
         validation={validation}
         placeholder={placeholder}
+        width={width}
+        height={height}
         options={options}
         isMulti={isMulti}
       />
       {validation && <Error fieldName={name} />}
-    </>
+    </div>
   );
 };
-
-export { FormElement };

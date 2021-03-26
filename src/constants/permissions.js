@@ -1,0 +1,14 @@
+export const createSystemUser = 'create system user';
+export const readSystemUser = 'read system user';
+export const updateSystemUser = 'update system user';
+export const deleteSystemUser = 'delete system user';
+export const crudSystemUser = 'crud system user';
+export const createPositionWithApprovalRequest = 'create position with approval request';
+export const createPositionWithoutApproval = 'create position without approval request';
+export const grantPositionApproval = 'grant position approval';
+export const closePosition = 'closePosition';
+export const createTeam = 'create team';
+export const readTeam = 'read team';
+export const updateTeam = 'update team';
+export const archiveTeam = 'archive team';
+export const crudTeam = 'crud team';
