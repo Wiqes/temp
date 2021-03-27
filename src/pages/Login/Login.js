@@ -1,12 +1,13 @@
-import React from 'react';
-import { observer } from 'mobx-react-lite';
-import { Box } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import { FormProvider, useForm } from 'react-hook-form';
+import React from "react";
+import { observer } from "mobx-react-lite";
+import { Box } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import { FormProvider, useForm } from "react-hook-form";
 
-import { FormElement } from '@inputs/FormElement';
-import { Button } from '@ui/Button/Button';
-import { useStyles } from '@pages/Login/style';
+import { FormElement } from "@inputs/FormElement";
+import { Button } from "@ui/Button/Button";
+import { useStyles } from "@pages/Login/style";
+import { authState } from "@store/authState";
 
 export const Login = observer(() => {
   const classes = useStyles();
@@ -14,7 +15,7 @@ export const Login = observer(() => {
   const { handleSubmit } = methods;
 
   const onSubmit = (data) => {
-    console.log(data);
+    authState.makeAuthTruthy();
   };
 
   return (
@@ -35,10 +36,10 @@ export const Login = observer(() => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div
                 style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  marginBottom: '90px',
+                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: "90px",
                 }}
               >
                 <FormElement
@@ -52,7 +53,8 @@ export const Login = observer(() => {
                   validation={{
                     required: true,
                     maxLength: 60,
-                    validate: (value) => value.trim() !== '',
+                    pattern: /^\S+@\S+\.\S+$/,
+                    validate: (value) => value.trim() !== "",
                   }}
                 />
                 <FormElement
@@ -66,11 +68,17 @@ export const Login = observer(() => {
                   validation={{
                     required: true,
                     maxLength: 60,
-                    validate: (value) => value.trim() !== '',
+                    validate: (value) => value.trim() !== "",
                   }}
                 />
               </div>
-              <Button variant="contained" color="primary" width="400px" height="50px" type="submit">
+              <Button
+                variant="contained"
+                color="primary"
+                width="400px"
+                height="50px"
+                type="submit"
+              >
                 LOGIN
               </Button>
             </form>
