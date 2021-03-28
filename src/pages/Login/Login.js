@@ -54,7 +54,6 @@ export const Login = observer(() => {
                     required: true,
                     maxLength: 60,
                     pattern: /^\S+@\S+\.\S+$/,
-                    validate: (value) => value.trim() !== "",
                   }}
                 />
                 <FormElement
@@ -63,13 +62,13 @@ export const Login = observer(() => {
                   type="input"
                   inputType="password"
                   defaultValue=""
-                  width="385px"
+                  width="335px"
                   height="50px"
                   validation={{
                     required: true,
+                    minLength: 8,
                     maxLength: 60,
                     pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\+\=\>\<\]\{\};:\/\.\[|\\-_\)\(\^#@$!%*?&])[A-Za-z\d\+\=\>\<\[\]\{\};:\/\.|\\-_\)\(\^#@$!%*?&]{8,}$/, //eslint-disable-line
-                    validate: (value) => value.trim() !== "",
                   }}
                 />
               </div>

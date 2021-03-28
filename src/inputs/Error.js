@@ -3,14 +3,12 @@ import { useFormContext } from "react-hook-form";
 
 export const Error = ({ fieldName }) => {
   const { errors } = useFormContext();
-  if (errors[fieldName]) {
-    console.log(errors[fieldName].type);
-  }
+
   return (
     <div>
       {errors[fieldName] &&
         (errors[fieldName].type === "required" ||
-          errors[fieldName].type === "validate") && (
+          errors[fieldName].type === "notEmpty") && (
           <span>Please enter the {`${fieldName}`}</span>
         )}
       {errors[fieldName] && errors[fieldName].type === "maxLength" && (
@@ -27,6 +25,15 @@ export const Error = ({ fieldName }) => {
               The password should contain at least one special character,
             </span>
             <div>digits, uppercase and lowercase letters both</div>
+          </>
+        )}
+      {errors[fieldName] &&
+        errors[fieldName].type === "minLength" &&
+        fieldName === "password" && (
+          <>
+            <span>
+              Use 8 characters without spaces or more for your password
+            </span>
           </>
         )}
     </div>
