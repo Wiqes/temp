@@ -68,6 +68,7 @@ export const Login = observer(() => {
                   validation={{
                     required: true,
                     maxLength: 60,
+                    pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\+\=\>\<\]\{\};:\/\.\[|\\-_\)\(\^#@$!%*?&])[A-Za-z\d\+\=\>\<\[\]\{\};:\/\.|\\-_\)\(\^#@$!%*?&]{8,}$/, //eslint-disable-line
                     validate: (value) => value.trim() !== "",
                   }}
                 />
