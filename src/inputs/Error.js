@@ -16,9 +16,19 @@ export const Error = ({ fieldName }) => {
       {errors[fieldName] && errors[fieldName].type === "maxLength" && (
         <span>This field is too long</span>
       )}
-      {errors[fieldName] && errors[fieldName].type === "pattern" && (
-        <span>Please enter the valid {`${fieldName}`}</span>
-      )}
+      {errors[fieldName] &&
+        errors[fieldName].type === "pattern" &&
+        fieldName === "email" && <span>Please enter the valid email</span>}
+      {errors[fieldName] &&
+        errors[fieldName].type === "pattern" &&
+        fieldName === "password" && (
+          <>
+            <span>
+              The password should contain at least one special character,
+            </span>
+            <div>digits, uppercase and lowercase letters both</div>
+          </>
+        )}
     </div>
   );
 };
