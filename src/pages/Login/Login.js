@@ -8,6 +8,7 @@ import { FormElement } from "@inputs/FormElement";
 import { Button } from "@ui/Button/Button";
 import { useStyles } from "@pages/Login/style";
 import { authState } from "@store/authState";
+import { Link } from "react-router-dom";
 
 export const Login = observer(() => {
   const classes = useStyles();
@@ -39,7 +40,6 @@ export const Login = observer(() => {
                   position: "relative",
                   display: "flex",
                   flexDirection: "column",
-                  marginBottom: "90px",
                 }}
               >
                 <FormElement
@@ -71,6 +71,9 @@ export const Login = observer(() => {
                     pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\+\=\>\<\]\{\};:\/\.\[|\\-_\)\(\^#@$!%*?&])[A-Za-z\d\+\=\>\<\[\]\{\};:\/\.|\\-_\)\(\^#@$!%*?&]{8,}$/, //eslint-disable-line
                   }}
                 />
+              </div>
+              <div className={classes.link}>
+                <Link to="/forgot-password">Forgot Password?</Link>
               </div>
               <Button
                 variant="contained"
