@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useStyles } from '@components/Employees/style';
 
 export const Employees = () => {

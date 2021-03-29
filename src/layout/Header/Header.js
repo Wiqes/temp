@@ -1,7 +1,6 @@
-import React from 'react';
 import { AppBar, Avatar, Box, Toolbar } from '@material-ui/core';
 
-import { useStyles } from 'layout/style';
+import { useStyles } from '@layout/style';
 
 export const Header = () => {
   const classes = useStyles();

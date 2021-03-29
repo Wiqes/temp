@@ -8,14 +8,13 @@ const useStyles = makeStyles((theme) => ({
     padding: '0',
     overflow: 'hidden',
   },
-  rightContainer: {
-    height: '100vh',
-  },
+  rightContainer: { height: '100vh' },
   typography: {
     flexGrow: 1,
     marginLeft: theme.spacing(16),
     fontWeight: 'bold',
   },
+
   title: {
     fontWeight: 'bold',
     fontSize: '24px',
@@ -26,23 +25,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
   },
-  avatar: {
-    marginRight: '15px',
-  },
-  userName: {
-    fontWeight: 'bold',
-  },
-  role: {
-    fontSize: '12px',
-  },
+  avatar: { marginRight: '15px' },
+  userName: { fontWeight: 'bold' },
+  role: { fontSize: '12px' },
   sidebar: {
     background: '#E6E6FA',
     padding: '0',
     height: '100%',
   },
-  listItemText: {
-    marginLeft: '5px',
-  },
+
+  listItemText: { marginLeft: '5px' },
   listItem: {
     display: 'flex',
     alignItems: 'center',

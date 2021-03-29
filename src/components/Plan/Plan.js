@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useStyles } from '@components/Plan/style';
 
 export const Plan = () => {

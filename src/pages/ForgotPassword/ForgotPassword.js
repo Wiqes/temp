@@ -1,6 +1,3 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
+import { observer } from 'mobx-react-lite';
 
-export const ForgotPassword = observer(() => {
-  return <div>Forgot Password page</div>;
-});
+export const ForgotPassword = observer(() => <div>Forgot Password page</div>);

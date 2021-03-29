@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useStyles } from '@components/Positions/style';
 
 export const Positions = () => {

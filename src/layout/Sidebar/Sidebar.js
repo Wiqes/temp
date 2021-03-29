@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { computed } from 'mobx';
 import List from '@material-ui/core/List';
@@ -10,7 +9,7 @@ import * as routes from '@routes/routes';
 import { authState } from '@store/authState';
 import { Icon } from '@ui/Icon/Icon';
 
-import { useStyles } from 'layout/style';
+import { useStyles } from '@layout/style';
 
 export const Sidebar = () => {
   const classes = useStyles();

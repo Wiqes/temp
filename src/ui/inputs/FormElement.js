@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Input } from './Input';
 import { Error } from './Error';
 
@@ -18,9 +16,7 @@ export const FormElement = ({
   options,
   isMulti,
 }) => {
-  const fieldMap = {
-    input: Input,
-  };
+  const fieldMap = { input: Input };
   const Component = fieldMap[type];
 
   return (

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useStyles } from '@components/Teams/style';
 
 export const Teams = () => {

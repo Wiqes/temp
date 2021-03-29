@@ -1,10 +1,6 @@
-import React from "react";
+import { iconsNames } from '@ui/Icon/iconsNames';
 
-import { icons } from "constants/icons";
-
-export const Icon = ({ iconName, fontSize = "18px", onClick, ...props }) => {
-  const Component = icons[iconName];
-  return Component ? (
-    <Component style={{ fontSize }} onClick={onClick} {...props} />
-  ) : null;
+export const Icon = ({ iconName, fontSize = '18px', onClick, ...props }) => {
+  const Component = iconsNames[iconName];
+  return Component ? <Component style={{ fontSize }} onClick={onClick} {...props} /> : null;
 };

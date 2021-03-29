@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useStyles } from '@components/SystemUsers/style';
 
 export const SystemUsers = () => {

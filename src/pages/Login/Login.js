@@ -1,28 +1,43 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
-import { Box } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import { FormProvider, useForm } from "react-hook-form";
+import { observer } from 'mobx-react-lite';
+import { Box } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import { FormElement } from "@inputs/FormElement";
-import { Button } from "@ui/Button/Button";
-import { useStyles } from "@pages/Login/style";
-import { authState } from "@store/authState";
-import { Link } from "react-router-dom";
+import * as paths from '@routes/paths';
+import { FormElement } from '@ui/inputs/FormElement';
+import { Button } from '@ui/Button/Button';
+import { useStyles } from '@pages/Login/style';
+import { authState } from '@store/authState';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export const Login = observer(() => {
   const classes = useStyles();
   const methods = useForm();
   const { handleSubmit } = methods;
 
-  const onSubmit = (data) => {
-    authState.makeAuthTruthy();
+  const onSubmit = ({ email, password }) => {
+    axios
+      .post('http://localhost:8000/api/v1/auth/', {
+        email,
+        password,
+      })
+      .then((response) => {
+        const { data } = response;
+        if (data.auth_token) {
+          authState.setAuthToken(data.auth_token);
+          authState.makeAuthTruthy();
+        }
+      })
+      .catch(() => {
+        authState.makeAuthFalsy();
+      });
   };
 
   return (
     <Grid container spacing={3} className={classes.loginPage}>
       <Grid item xs={6}>
-        <div className={classes.image}></div>
+        <div className={classes.image} />
       </Grid>
       <Grid item xs={6}>
         <Box
@@ -37,9 +52,9 @@ export const Login = observer(() => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div
                 style={{
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column",
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
                 <FormElement
@@ -73,15 +88,9 @@ export const Login = observer(() => {
                 />
               </div>
               <div className={classes.link}>
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <Link to={paths.forgotPassword}>Forgot Password?</Link>
               </div>
-              <Button
-                variant="contained"
-                color="primary"
-                width="400px"
-                height="50px"
-                type="submit"
-              >
+              <Button variant="contained" color="primary" width="400px" height="50px" type="submit">
                 LOGIN
               </Button>
             </form>
