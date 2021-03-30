@@ -6,10 +6,12 @@
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
       "@hoc/*": ["hoc/*"],
+      "@hooks/*": ["hooks/*"],
       "@layout/*": ["layout/*"],
       "@pages/*": ["pages/*"],
       "@inputs/*": ["inputs/*"],
       "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
       "@store/*": ["store/*"],
       "@ui/*": ["ui/*"]
     }

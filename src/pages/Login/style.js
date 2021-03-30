@@ -18,10 +18,24 @@ const useStyles = makeStyles(() => ({
     fontWeight: 'bold',
     fontSize: '23px',
   },
+  inputsContainer: {
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+  },
   input: {
     marginBottom: '10px',
     width: '400px',
   },
+  warningContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: '#FFE4E1',
+    marginBottom: '10px',
+    padding: '15px',
+  },
+  warning: { marginLeft: '5px' },
   loginButton: { marginTop: '50px' },
 }));
 

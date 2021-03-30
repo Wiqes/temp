@@ -1,10 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { contentStyles } from '@assets/styles';
 
 export const useStyles = makeStyles(() => ({
-  root: {
-    ...contentStyles,
+  wrapper: {
     position: 'relative',
-    background: '#FFDAB9',
+    width: '100%',
+    height: '100%',
   },
 }));

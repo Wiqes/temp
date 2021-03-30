@@ -1,25 +1,25 @@
 import { rolePermissions } from '@constants/rolePermissions';
 import { makeAutoObservable } from 'mobx';
 
+import * as roles from '@constants/roles';
+
 class AuthState {
   authToken = '';
   isAuthenticated = false;
-  role = 'Budget Owner';
+  role = '';
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setAuthToken(token) {
+  login(token) {
     this.authToken = token;
-  }
-
-  makeAuthTruthy() {
     this.isAuthenticated = true;
-    this.role = 'Admin';
+    this.role = roles.admin;
   }
 
-  makeAuthFalsy() {
+  logout() {
+    this.authToken = '';
     this.isAuthenticated = false;
     this.role = '';
   }

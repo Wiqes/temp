@@ -1,4 +1,4 @@
-import { MdExplore, MdAssignment, MdGroup } from 'react-icons/md';
+import { MdExplore, MdAssignment, MdGroup, MdReportProblem } from 'react-icons/md';
 import { FaUserTie, FaBlackTie, FaUserCircle } from 'react-icons/fa';
 import { BiHide, BiShowAlt } from 'react-icons/bi';
 
@@ -11,4 +11,5 @@ export const iconsNames = {
   UserCircle: FaUserCircle,
   HideIcon: BiHide,
   ShowIcon: BiShowAlt,
+  ReportProblem: MdReportProblem,
 };
